@@ -8,8 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-      ../../modules/theming/stylix
+      ./../../nixosModules/theming/stylix
+      #      ./../../nixosModules/applications/nvf
     ];
 
   # Bootloader.
@@ -28,7 +28,7 @@
   hardware.bluetooth.powerOnBoot = true;
   security.rtkit.enable = true;
   security.pam.services.yprlock = {};
-  security.doas.enable = true;
+  security.polkit.enable = true;
   # Enable networking features 
   networking.networkmanager.enable = true;
 
@@ -85,7 +85,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  neofetch wofi swww bluez blueman brightnessctl alsa-utils keepassxc git home-manager nautilus python314 busybox lact
+  neofetch wofi swww bluez blueman brightnessctl alsa-utils keepassxc home-manager nautilus python314 busybox lact
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

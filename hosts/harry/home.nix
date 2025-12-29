@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -6,6 +6,10 @@
   home.username = "tyh";
   home.homeDirectory = "/home/tyh";
 
+ imports = [ 
+ ./../../nixosModules/applications/neovim/default.nix
+ ./../../nixosModules/applications/sway/default.nix
+ ];
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -18,6 +22,9 @@
   #Allow Federal Spyware Packages
   nixpkgs.config.allowUnfree = true;
 
+#  nixpkgs.overlays = [
+#    inputs.neovim-nightly-overlay.overlays.default
+#    ];
   # The home.packages option allows you to install Nix packages into your
   # environment.
   services.gammastep = {
@@ -26,20 +33,27 @@
     latitude = 42.1;
     longitude = -71.05;
   };
-  services.blanket.enable = true;
   programs.wezterm.enable = true;
-  programs.kitty.enable = true;
   programs.waybar.enable = true;
   programs.eww.enable = true;
+  programs.git = {
+    enable = true;
+    settings = {
+      user = {
+        name = "Thaddeus-Harris";
+        email = "thaddeusyharris@gmail.com";
+      };
+    };
+  };
   home.packages = with pkgs; [
     #Non-essential utils
     fzf busybox xfce.thunar wineWowPackages.waylandFull syncthing mpv thunderbird pandoc rockbox-utility yt-dlp  baobab activitywatch awatcher 
     #Productivity
     libreoffice kdePackages.okular firefox librewolf qutebrowser dropbox kdePackages.dolphin bash iamb weechat qbittorrent obsidian ollama calibre lynx kicad-small anki texliveFull
     #Programming Packages 
-    neovim ghc rustup gcc qmk typst gprolog
+    ghc rustup gcc qmk typst gprolog lean4
     #Entertainment
-    legcord ani-cli mov-cli protonup element-desktop eww prismlauncher heroic spotify
+    legcord ani-cli mov-cli protonup-ng element-desktop eww prismlauncher heroic spotify
 
     ];
 
