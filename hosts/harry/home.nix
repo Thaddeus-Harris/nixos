@@ -7,8 +7,8 @@
   home.homeDirectory = "/home/tyh";
 
  imports = [ 
- ./../../nixosModules/applications/neovim/default.nix
- ./../../nixosModules/applications/sway/default.nix
+ ./../../modules/applications/neovim/default.nix
+ ./../../modules/applications/sway/default.nix
  ];
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -47,7 +47,7 @@
   };
   home.packages = with pkgs; [
     #Non-essential utils
-    fzf busybox xfce.thunar wineWowPackages.waylandFull syncthing mpv thunderbird pandoc rockbox-utility yt-dlp  baobab activitywatch awatcher 
+    fzf busybox xfce.thunar wineWowPackages.waylandFull syncthing mpv thunderbird pandoc rockbox-utility yt-dlp  baobab activitywatch awatcher wmenu swayidle foot wl-clipboard slurp
     #Productivity
     libreoffice kdePackages.okular firefox librewolf qutebrowser dropbox kdePackages.dolphin bash iamb weechat qbittorrent obsidian ollama calibre lynx kicad-small anki texliveFull
     #Programming Packages 

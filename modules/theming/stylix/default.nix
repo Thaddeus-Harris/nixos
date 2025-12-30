@@ -7,7 +7,7 @@ in
   stylix = {
     enable = true;
     base16Scheme = theme;
-    image = ./gruvbox_mountain_range.jpg;
+    image = ./shrew-wallpaper-16.jpg;
     opacity = {
       terminal = 0.9;
       popups = 0.9;

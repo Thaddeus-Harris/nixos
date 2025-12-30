@@ -8,8 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./../../nixosModules/theming/stylix
-      #      ./../../nixosModules/applications/nvf
+      ./../../modules/theming/stylix
     ];
 
   # Bootloader.
@@ -85,7 +84,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  neofetch wofi swww bluez blueman brightnessctl alsa-utils keepassxc home-manager nautilus python314 busybox lact
+  neofetch wofi bluez blueman brightnessctl alsa-utils keepassxc home-manager nautilus python314 busybox lact swayrbar pulseaudio
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -106,7 +105,7 @@ programs.gamemode.enable = true;
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd hyprland";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd sway";
 	user = "greeter";
 	};
       };
@@ -126,6 +125,7 @@ programs.gamemode.enable = true;
     pulse.enable=true;
     };
   services.printing.enable = true;
+  services.upower.enable = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
