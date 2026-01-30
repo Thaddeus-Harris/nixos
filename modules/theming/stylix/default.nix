@@ -1,7 +1,8 @@
 { inputs, pkgs, lib, ...}:
 
+# Note that terracotta, everforest-dark-hard, cupcake, charcoal-dark, chalk, atelier-estuary looked nice as well, would be good to learn how to switch between them.
 let
-  theme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
+  theme = "${pkgs.base16-schemes}/share/themes/terracotta-dark.yaml";
 in
 {
   stylix = {

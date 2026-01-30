@@ -11,13 +11,11 @@ in {
         # Use kitty as default terminal
         terminal = "foot"; 
 	bars = [
-	  {command = "\${pkgs.swayrbar}/bin/swayrbar";}
-	  {statusCommand = "swayrbar";} 
+	  {extraConfig = "status_command swayrbar \n
+	                  position top";}
+	  #{command = "\${pkgs.waybar}/bin/waybar";}
+	  #{statusCommand = "swayrbar";} 
 	];
-        startup = [
-          # Launch Firefox on start
-          {command = "qutebrowser";}
-        ];
         keybindings = lib.mkOptionDefault {
           "${modifier}+b" = "exec qutebrowser";
 	  "XF86MonBrightnessDown" = "exec brightnessctl set 10%-";

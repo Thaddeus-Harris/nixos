@@ -95,10 +95,6 @@
   #   enableSSHSupport = true;
   # };
 
-programs.steam.enable = true;
-programs.steam.gamescopeSession.enable = true;
-programs.gamemode.enable = true;
-
   # List services that you want to enable:
   services.greetd = {
     enable = true;

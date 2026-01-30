@@ -33,6 +33,7 @@
     latitude = 42.1;
     longitude = -71.05;
   };
+	services.swww.enable = true;
   programs.wezterm.enable = true;
   programs.waybar.enable = true;
   programs.eww.enable = true;
@@ -47,14 +48,13 @@
   };
   home.packages = with pkgs; [
     #Non-essential utils
-    fzf busybox xfce.thunar wineWowPackages.waylandFull syncthing mpv thunderbird pandoc rockbox-utility yt-dlp  baobab activitywatch awatcher wmenu swayidle foot wl-clipboard slurp
+    fzf busybox wineWowPackages.waylandFull syncthing mpv thunderbird pandoc rockbox-utility yt-dlp baobab activitywatch awatcher swayidle foot wl-clipboard slurp
     #Productivity
-    libreoffice kdePackages.okular firefox librewolf qutebrowser dropbox kdePackages.dolphin bash iamb weechat qbittorrent obsidian ollama calibre lynx kicad-small anki texliveFull
+    libreoffice kdePackages.okular firefox librewolf qutebrowser dropbox kdePackages.dolphin bash iamb weechat qbittorrent obsidian ollama calibre lynx kicad-small anki texliveFull clock-rs glance libqalculate
     #Programming Packages 
-    ghc rustup gcc qmk typst gprolog lean4
+    ghc rustup gcc qmk typst lean4 python314 octaveFull
     #Entertainment
-    legcord ani-cli mov-cli protonup-ng element-desktop eww prismlauncher heroic spotify
-
+    legcord ani-cli mov-cli protonup-ng element-desktop prismlauncher heroic spotify
     ];
 
       
