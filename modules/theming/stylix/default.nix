@@ -8,7 +8,7 @@ in
   stylix = {
     enable = true;
     base16Scheme = theme;
-    image = ./shrew-wallpaper-16.jpg;
+    image = ./mist.jpg;
     opacity = {
       terminal = 0.9;
       popups = 0.9;
