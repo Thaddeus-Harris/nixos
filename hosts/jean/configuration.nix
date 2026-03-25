@@ -43,8 +43,6 @@
     PATH = [ 
       "${XDG_BIN_HOME}"
     ];
-
-    LEDGER_FILE = "$HOME/DocsAndNotes/Org/Finance/main.journal";
   };
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -86,7 +84,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  bluez blueman brightnessctl alsa-utils keepassxc home-manager busybox lact swayrbar pulseaudio
+  brightnessctl alsa-utils keepassxc home-manager busybox lact pulseaudio
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

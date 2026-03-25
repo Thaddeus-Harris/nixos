@@ -9,7 +9,7 @@ in {
       config = rec {
         modifier = "Mod4";
         # Use kitty as default terminal
-        terminal = "foot"; 
+        terminal = "alacritty"; 
 	bars = [
 	  {extraConfig = "status_command swayrbar \n
 	                  position top";}
@@ -17,7 +17,7 @@ in {
 	  #{statusCommand = "swayrbar";} 
 	];
         keybindings = lib.mkOptionDefault {
-          "${modifier}+b" = "exec qutebrowser";
+          "${modifier}+b" = "exec firefox";
 	  "XF86MonBrightnessDown" = "exec brightnessctl set 10%-";
 	  "XF86MonBrightnessUp" = "exec brightnessctl set 10%+";
 	  "XF86AudioMute" = "exec amixer set Master toggle";

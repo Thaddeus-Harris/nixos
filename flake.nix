@@ -33,5 +33,12 @@
           inputs.stylix.nixosModules.stylix
         ];
       };
+      nixosConfigurations.jean = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/harry/configuration.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
     };
 }

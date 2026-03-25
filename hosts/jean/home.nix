@@ -8,7 +8,6 @@
 
  imports = [ 
  ./../../modules/applications/neovim/default.nix
- ./../../modules/applications/sway/default.nix
  ];
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -33,14 +32,6 @@
     latitude = 42.1;
     longitude = -71.05;
   };
-	services.swww.enable = true;
-	services.ollama = {
-    enable = true;
-		package = pkgs.ollama-vulkan;
-	};
-  programs.wezterm.enable = true;
-  programs.waybar.enable = true;
-  programs.eww.enable = true;
   programs.git = {
     enable = true;
     settings = {
@@ -52,13 +43,13 @@
   };
   home.packages = with pkgs; [
     #Non-essential utils
-    fzf busybox syncthing mpv thunderbird pandoc rockbox-utility yt-dlp baobab activitywatch awatcher swayidle alacritty wl-clipboard slurp hledger-ui hledger zathura pavucontrol piper amdctl tmux tor-browser sioyek st 
+    fzf busybox syncthing mpv pandoc yt-dlp baobab foot 
     #Productivity
-    libreoffice kdePackages.okular firefox librewolf qutebrowser dropbox kdePackages.dolphin bash weechat qbittorrent obsidian calibre lynx kicad-small anki texliveFull clock-rs glance libqalculate kdePackages.kdenlive
+    kdePackages.okular librewolf kdePackages.dolphin bash iamb weechat qbittorrent ollama calibre
     #Programming Packages 
-    ghc rustup gcc qmk typst lean4 python314 octaveFull opencode poetry conda
+    ghc rustup gcc qmk typst lean4 python314 
     #Entertainment
-    legcord ani-cli mov-cli protonup-ng element-desktop prismlauncher heroic spotify
+    element-desktop 
     ];
 
       
